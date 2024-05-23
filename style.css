@@ -54,7 +54,7 @@ canvas{
 }
 
 /* RESPONSIVE DESIGN */
-@media (min-width : 350px) and (max-width: 950px) {
+@media (min-width : 350px) and (max-width: 1000px) {
   .main{
     top: 40%;
   }
