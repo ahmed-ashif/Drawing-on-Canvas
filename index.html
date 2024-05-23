@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Drawing on Canvas</title>
+  <link rel="icon" href="Icon/Ashif.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+      <h1 id="heading">Drawing on Canvas</h1>
+
+      <!-- top -->
+      <div class="top">  
+         
+        <!-- color picker -->
+        <div class="block">
+            <p>Text Color</p>
+            <input type="color" class="form-control" id="textColor">
+        </div>
+  
+        <!-- background Colour -->
+        <div class="block">
+          <p>Background</p>
+          <input type="color" class="form-control" id="canvasColor">
+        </div>
+
+        <!-- Font size -->
+        <div class="block">
+          <p>Font Size</p>
+          <select class="custom-select" type="select" id="fontSizePicker">
+            <option value="1">1px</option>
+            <option value="5">5px</option>
+            <option value="10">10px</option>
+            <option value="20">20px</option>
+            <option value="30">30px</option>
+            <option value="40">40px</option>  
+            <option value="50">50px</option>  
+          </select>       
+        </div>
+      </div>
+
+      <!-- Canvas to draw the signature -->
+     <canvas class="canvas" id="myCanvas" width="700" height="500">
+
+     </canvas>
+
+     <!-- Bottom with 3 buttons -->
+      <div class="bottom">
+          <button class="btn" id="clearButton">Clear</button>
+          <button class="btn" id="saveButton">Save & Download</button>
+          <button class="btn" id="retrieveButton">Retrieve Saved Signature</button>
+      </div>
+
+    </div>
+    
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="script.js"></script>
+</body>
+</html>
