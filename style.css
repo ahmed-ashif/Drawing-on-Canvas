@@ -16,8 +16,11 @@ html , body{
  transform: translate(-50%,-50%);
 }
 #heading{
+  font-size: 2rem;
   position: absolute;
+  top: 10px;
   left: 50%;
+  white-space: nowrap;
   transform: translate(-50%,-50%);
 }
 .top , .bottom{
@@ -37,7 +40,8 @@ html , body{
   width: 80%;
   color: white;
   font-size: 0.9rem;
-  cursor: pointer; 
+  cursor: pointer;
+  white-space: nowrap; 
 }
 #clearButton{
   background-color: red;
@@ -54,26 +58,17 @@ canvas{
 }
 
 /* RESPONSIVE DESIGN */
-/* @media (min-width : 350px) and (max-width: 1000px) {
+@media (min-width : 350px) and (max-width: 1000px) {
   .main{
-    top: 40%;
+    top: 30%;
   }
   #heading{
-   font-size: 20px; 
+   font-size: 3rem; 
   }
-  canvas{
-    height: 300px;
-    width: 350px;
-  }
- .bottom{
-  position: absolute;
-  top: 115%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  flex-direction: column;
+  .block > p{
+    font-size: 2rem;
   }
   .btn{
-    width: 90%;
-
-  } 
-} */
+    font-size: 1.2rem;
+  }
+}
