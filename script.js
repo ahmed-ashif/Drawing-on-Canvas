@@ -54,7 +54,7 @@
     // Selecting the color of the canvas background
     canvasColor.addEventListener('change',(e)=>{
       ctx.fillStyle = e.target.value;
-      ctx.fillRect(0,0,700,500);
+      ctx.fillRect(0,0,700,650);
     });
 
     // Drawing on the canvas
@@ -115,4 +115,39 @@
         img.src = savedCanvas;
         ctx.drawImage(img, 0, 0);
     }
+});
+
+// Touch for phone screen
+function getTouchPos(canvasDom, touchEvent) {
+  const rect = canvasDom.getBoundingClientRect();
+  return {
+      x: touchEvent.touches[0].clientX - rect.left,
+      y: touchEvent.touches[0].clientY - rect.top
+  };
+}
+canvas.addEventListener('touchstart', (e)=>{
+    drawing = true;
+    const pos = getTouchPos(canvas, e);
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+    e.preventDefault();
+});
+canvas.addEventListener('touchmove', (e)=>{
+  if (!drawing) return;
+  const pos = getTouchPos(canvas, e);
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+  e.preventDefault();
+});
+canvas.addEventListener('touchend', (e)=>{
+  if (!drawing) return;
+  drawing = false;
+  ctx.closePath();
+  e.preventDefault();
+} );
+canvas.addEventListener('touchcancel', (e)=>{
+  if (!drawing) return;
+  drawing = false;
+  ctx.closePath();
+  e.preventDefault();
 });
